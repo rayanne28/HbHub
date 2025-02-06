@@ -37,10 +37,63 @@ local Window = Rayfield:CreateWindow({
    }
 })
 
-local Tab1 = Window:CreateTab("Auto Farm", nil)
+
+
+
+
+
+
+-- AutoFarm Section
+local Tab1 = Window:CreateTab("Auto Farm", "box")
+local MeteorFarmToogle = false 
+
+local Toggle = Tab1:CreateToggle({
+   Name = "Enable Meteor Farm",
+   CurrentValue = false,
+   Flag = "MeteorToggle",
+   Callback = function(Value)
+       MeteorFarmToogle = Value
+       if MeteorFarmToogle then
+           while MeteorFarmToogle do
+               task.wait(2)
+               for i,v in pairs(game:GetService("Workspace").ItemSpawns.Meteors:GetDescendants()) do
+                   if v.Name == "Meteor" then
+                       part.CFrame = v.CFrame + Vector3.new(0,7,0)
+                   end
+               end
+
+               for i,v in pairs(game:GetService("Workspace").ItemSpawns.Meteors:GetDescendants()) do
+                   if v:FindFirstChild("Interaction") then
+                       fireproximityprompt(v.Interaction, 1, true)
+                   end
+               end
+           end
+       end
+   end
+})
+
+local AutoM1Toogle = false
+local Toggle = Tab1:CreateToggle({
+   Name = "Auto M1",
+   CurrentValue = false,
+   Flag = "Auto M1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   AutoM1Toogle = Value
+   if AutoM1Toogle then 
+   while AutoM1Toogle do
+if Value == true then
+task.wait(0.1)
+  game:GetService("ReplicatedStorage"):WaitForChild("ReplicatedModules"):WaitForChild("KnitPackage"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("MoveInputService"):WaitForChild("RF"):WaitForChild("FireInput"):InvokeServer("MouseButton1")
+   end
+   end
+   end
+   end,
+})
+
+
+--Teleport Section
 local Tab2 = Window:CreateTab("Teleport", "accessibility")
 local Section = Tab2:CreateSection("Teleport to:")
-
 local Button = Tab2:CreateButton({
    Name = "Mansion joestar",
    Callback = function()
@@ -156,49 +209,25 @@ local Button = Tab2:CreateButton({
 part.CFrame = CFrame.new(-2969.012451171875, 921.8076782226562, 15162.8876953125)
 end,
 })
-local MeteorFarmToogle = false 
 
-local Toggle = Tab1:CreateToggle({
-   Name = "Enable Meteor Farm",
+--Auto Quest
+
+local Tab3 = Window:CreateTabe("Quest", "mail")
+
+local AutoQuestGojo = false
+local Toggle = Tab3:CreateToggle({
+   Name = "Auto Quest The honored One (Gojo)",
    CurrentValue = false,
-   Flag = "MeteorToggle",
+   Flag = "Auto Gojo Quest", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-       MeteorFarmToogle = Value
-       if MeteorFarmToogle then
-           while MeteorFarmToogle do
-               task.wait(2)
-               for i,v in pairs(game:GetService("Workspace").ItemSpawns.Meteors:GetDescendants()) do
-                   if v.Name == "Meteor" then
-                       part.CFrame = v.CFrame + Vector3.new(0,7,0)
-                   end
-               end
-
-               for i,v in pairs(game:GetService("Workspace").ItemSpawns.Meteors:GetDescendants()) do
-                   if v:FindFirstChild("Interaction") then
-                       fireproximityprompt(v.Interaction, 1, true)
-                   end
-               end
-           end
-       end
-   end
-})
-
-local AutoM1Toogle = false
-local Toggle = Tab1:CreateToggle({
-   Name = "Auto M1",
-   CurrentValue = false,
-   Flag = "Auto M1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-   MeteorFarmToogle = Value
-   if MeteorFarmToogle then 
-   while MeteorFarmToogle do
+   AutoQuestGojo = Value
+   if AutoQuestGojo then 
+   while AutoQuestGojo do
 if Value == true then
-task.wait(0.1)
+task.wait(1)
   game:GetService("ReplicatedStorage"):WaitForChild("ReplicatedModules"):WaitForChild("KnitPackage"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("MoveInputService"):WaitForChild("RF"):WaitForChild("FireInput"):InvokeServer("MouseButton1")
    end
    end
    end
    end,
 })
-
-
