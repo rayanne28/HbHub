@@ -45,8 +45,43 @@ local Window = Rayfield:CreateWindow({
 
 -- AutoFarm Section
 local Tab1 = Window:CreateTab("Auto Farm", "box")
-local MeteorFarmToogle = false 
 
+local AutoThugs = false 
+
+local Toggle = Tab1:CreateToggle({
+   Name = "Auto Thugs",
+   CurrentValue = false,
+   Flag = "AutoThugs",
+   Callback = function(Value)
+      AutoThugs = Value
+       if AutoThugs then
+           while AutoThugs do
+               task.wait(0)
+              part.CFrame = game:GetService("Workspace").Living.Thug.HumanoidRootPart.CFrame
+                   end
+                   end
+               end,
+               })
+
+local TojiAutoBoss = false 
+local toogle = Tab1:CreateToggle({
+    Name = "Autp toji BossFight",
+    CurrentValue = false,
+    Flag = "Toji Bossfight",
+    Callback = function(Value)
+    TojiAutoBoss = Value
+    if TojiAutoBoss then
+    while TojiAutoBoss do
+    task.wait()
+    part.CFrame = game:GetService("Workspace").Living["The Sorcerer Killer"].HumanoidRootPart.CFrame
+    end
+    end
+    end,
+    })
+    
+
+
+local MeteorFarmToogle = false 
 local Toggle = Tab1:CreateToggle({
    Name = "Enable Meteor Farm",
    CurrentValue = false,
@@ -231,3 +266,4 @@ task.wait(1)
    end
    end,
 })
+
