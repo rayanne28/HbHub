@@ -1,6 +1,42 @@
+--Ajouter de nouveaux boss
+--Fixer le bug quand ton personnage meurt le script fonctionne plus
+--ajouter de la distance entre le joueur et le mob, boss
+--ajouter un plus grand delai pour l'auto farm mob
+
+-- // proximity prompt by sowd
+local function fireproximityprompt(Obj, Amount, Skip)
+    if Obj.ClassName == "ProximityPrompt" then 
+        Amount = Amount or 1
+        local PromptTime = Obj.HoldDuration
+        if Skip then 
+            Obj.HoldDuration = 0
+        end
+        for i = 1, Amount do 
+            Obj:InputHoldBegin()
+            if not Skip then 
+                wait(Obj.HoldDuration)
+            end
+            Obj:InputHoldEnd()
+        end
+        Obj.HoldDuration = PromptTime
+    else 
+        error("userdata<ProximityPrompt> expected")
+    end
+end
+
+--variables
 local part = game.Players.LocalPlayer.Character.HumanoidRootPart
+local lp = game:GetService("Players").LocalPlayer
+local char = lp.Character or lp.CharacterAdded:Wait()
+local hum = char:WaitForChild("Humanoid")
+--Getting new humanoid rootpart when dead
+lp.CharacterAdded:Connect(function(Character)
+    char = Character
+    hum = Character:WaitForChild("Humanoid")
+    part = Character:WaitForChild("HumanoidRootPart")
+end)
 
-
+--library
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
@@ -57,7 +93,7 @@ local Toggle = Tab1:CreateToggle({
        if AutoThugs then
            while AutoThugs do
                task.wait(0)
-              part.CFrame = game:GetService("Workspace").Living.Thug.HumanoidRootPart.CFrame
+              part.CFrame = game:GetService("Workspace").Living.Thug.HumanoidRootPart.CFrame + Vector3.new(-1, 0, 0)
                    end
                    end
                end,
@@ -73,7 +109,7 @@ local toogle = Tab1:CreateToggle({
     if TojiAutoBoss then
     while TojiAutoBoss do
     task.wait()
-    part.CFrame = game:GetService("Workspace").Living["The Sorcerer Killer"].HumanoidRootPart.CFrame
+    part.CFrame = game:GetService("Workspace").Living["The Sorcerer Killer"].HumanoidRootPart.CFrame + Vector3.new(1, 0, 0)
     end
     end
     end,
@@ -266,4 +302,6 @@ task.wait(1)
    end
    end,
 })
+
+
 
