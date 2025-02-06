@@ -54,3 +54,105 @@ local Button = Tab:CreateButton({
  part.CFrame = CFrame.new(1016.3944091796875, 934.3607788085938, 2906.649169921875)
  end,
 })
+
+
+local Button = Tab:CreateButton({
+   Name = "Park",
+   Callback = function()
+part.CFrame = CFrame.new(2062.201171875, 973.989990234375, 333.7828063964844)
+ end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Curse Spawn",
+   Callback = function()
+part.CFrame = CFrame.new(1964.9942626953125, 943.199951171875, -1426.6124267578125)
+end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Floating Village",
+   Callback = function()
+part.CFrame = CFrame.new(1252.8555908203125, 1012.9302978515625, -324.0158996582031)
+end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Subway(In Front Of Gojo)",
+   Callback = function()
+part.CFrame = CFrame.new(-16749.048828125, 8.92586898803711, -5998.7568359375)
+end,
+})
+local Button = Tab:CreateButton({
+   Name = "Bike Park",
+   Callback = function()
+part.CFrame = CFrame.new(2382.510986328125, 1001.0311889648438, -172.89599609375)
+end,
+})
+local Button = Tab:CreateButton({
+   Name = "Bosses Spawn room",
+   Callback = function()
+part.CFrame = CFrame.new(2814.526611328125, 1026.6990966796875, -747.7949829101562)
+end,
+})
+local Button = Tab:CreateButton({
+   Name = "Bosses Spawn room 2 (Realm of the Forgotten)",
+   Callback = function()
+part.CFrame = CFrame.new(19090.634765625, 924.8434448242188, 114.41057586669922)
+end,
+})
+local Button = Tab:CreateButton({
+   Name = "Port",
+   Callback = function()
+part.CFrame = CFrame.new(2087.458984375, 930.3148803710938, 1094.0849609375)
+end,
+})
+local Button = Tab:CreateButton({
+   Name = "Valentine Boss",
+   Callback = function()
+part.CFrame = CFrame.new(1231.714111328125, 913.5514526367188, -2023.451904296875)
+end,
+ })
+
+ local Button = Tab:CreateButton({
+   Name = "Crocodile",
+   Callback = function()
+part.CFrame = CFrame.new(2175.717041015625, 920.2870483398438, -2533.56494140625)
+end,
+})
+local Button = Tab:CreateButton({
+   Name = "Shibuya",
+   Callback = function()
+part.CFrame = CFrame.new(-78.02241516113281, 18.93306541442871, -9963.775390625)
+end,
+})
+local Button = Tab:CreateButton({
+   Name = "Boa",
+   Callback = function()
+part.CFrame = CFrame.new(-5108.13916015625, 1004.0505981445312, -229.67568969726562)
+end,
+})
+local Button = Tab:CreateButton({
+   Name = "Sirup Village",
+   Callback = function()
+part.CFrame = CFrame.new(9992.599609375, -46.41490936279297, 30112.365234375)
+end,})
+local Button = Tab:CreateButton({
+   Name = "Law",
+   Callback = function()
+part.CFrame = CFrame.new(-69058.9296875, 3366.213134765625, 19938.62890625)
+end,
+})
+local Button = Tab:CreateButton({
+   Name = "Whitebeard",
+   Callback = function()
+part.CFrame = CFrame.new(-24419.1875, 1585.5924072265625, 445.38079833984375)
+end,
+})
+local Button = Tab:CreateButton({
+   Name = "Orange Town",
+   Callback = function()
+part.CFrame = CFrame.new(-2969.012451171875, 921.8076782226562, 15162.8876953125)
+end,
+})
+
