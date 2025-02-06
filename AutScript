@@ -155,4 +155,47 @@ local Button = Tab:CreateButton({
 part.CFrame = CFrame.new(-2969.012451171875, 921.8076782226562, 15162.8876953125)
 end,
 })
+local MeteorFarmToogle = false 
 
+local Toggle = Tab:CreateToggle({
+   Name = "Enable Meteor Farm",
+   CurrentValue = false,
+   Flag = "MeteorToggle",
+   Callback = function(Value)
+       MeteorFarmToogle = Value
+       if MeteorFarmToogle then
+           while MeteorFarmToogle do
+               task.wait(2)
+               for i,v in pairs(game:GetService("Workspace").ItemSpawns.Meteors:GetDescendants()) do
+                   if v.Name == "Meteor" then
+                       part.CFrame = v.CFrame + Vector3.new(0,7,0)
+                   end
+               end
+
+               for i,v in pairs(game:GetService("Workspace").ItemSpawns.Meteors:GetDescendants()) do
+                   if v:FindFirstChild("Interaction") then
+                       fireproximityprompt(v.Interaction, 1, true)
+                   end
+               end
+           end
+       end
+   end
+})
+
+local AutoM1Toogle = false
+local Toggle = Tab:CreateToggle({
+   Name = "Auto M1",
+   CurrentValue = false,
+   Flag = "Auto M1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   MeteorFarmToogle = Value
+   if MeteorFarmToogle then 
+   while MeteorFarmToogle do
+if Value == true then
+task.wait(0.1)
+  game:GetService("ReplicatedStorage"):WaitForChild("ReplicatedModules"):WaitForChild("KnitPackage"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("MoveInputService"):WaitForChild("RF"):WaitForChild("FireInput"):InvokeServer("MouseButton1")
+   end
+   end
+   end
+   end,
+})
