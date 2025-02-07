@@ -1,5 +1,5 @@
 --Ajouter de nouveaux boss
---Fixer le bug quand ton personnage meurt le script fonctionne plus
+
 --ajouter de la distance entre le joueur et le mob, boss
 --ajouter un plus grand delai pour l'auto farm mob
 
@@ -302,6 +302,4 @@ task.wait(1)
    end
    end,
 })
-
-
 
