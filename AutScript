@@ -86,10 +86,7 @@ local AutoThugs = false
 
 
 --Thugs auto farm + Variables
-local thug = game:GetService("Workspace").Living:FindFirstChild("Thug")
-  if thug and thug:FindFirstChild("HumanoidRootPart") then
-        local thugroot = thug.HumanoidRootPart
-        end
+
                    
 local Toggle = Tab1:CreateToggle({
    Name = "Auto Thugs",
@@ -100,7 +97,12 @@ local Toggle = Tab1:CreateToggle({
        if AutoThugs then
            while AutoThugs do
                task.wait(0)
+            local thug = game:GetService("Workspace").Living:FindFirstChild("Thug")
+  if thug and thug:FindFirstChild("HumanoidRootPart") then
+        local thugroot = thug.HumanoidRootPart
+        
                 part.CFrame = thugroot.CFrame * CFrame.new(0, 0, 3)  
+                   end
                    end
                    end
                end,
