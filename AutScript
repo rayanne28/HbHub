@@ -84,6 +84,12 @@ local Tab1 = Window:CreateTab("Auto Farm", "box")
 
 local AutoThugs = false 
 
+
+--Thugs auto farm + Variables
+local thug = game:GetService("Workspace").Living:FindFirstChild("Thug")
+  if thug and thug:FindFirstChild("HumanoidRootPart") then
+        local thugroot = thug.HumanoidRootPart
+                   
 local Toggle = Tab1:CreateToggle({
    Name = "Auto Thugs",
    CurrentValue = false,
@@ -93,7 +99,7 @@ local Toggle = Tab1:CreateToggle({
        if AutoThugs then
            while AutoThugs do
                task.wait(0)
-              part.CFrame = game:GetService("Workspace").Living.Thug.HumanoidRootPart.CFrame + Vector3.new(-1, 0, 0)
+                part.CFrame = thugroot.CFrame * CFrame.new(0, 0, 3)  
                    end
                    end
                end,
@@ -296,10 +302,10 @@ local Toggle = Tab3:CreateToggle({
    while AutoQuestGojo do
 if Value == true then
 task.wait(1)
-  game:GetService("ReplicatedStorage"):WaitForChild("ReplicatedModules"):WaitForChild("KnitPackage"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("MoveInputService"):WaitForChild("RF"):WaitForChild("FireInput"):InvokeServer("MouseButton1")
+  game:GetService("ReplicatedStorage"):WaitForChild("ReplicatedModules"):WaitForChild("KnitPackage"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("DialogueService"):WaitForChild("RF"):WaitForChild("CheckDialogue"):InvokeServer("Slayer_Quest", "Gojo")
+
    end
    end
    end
    end,
 })
-
