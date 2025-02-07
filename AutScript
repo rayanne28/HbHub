@@ -283,7 +283,7 @@ end,
 
 --Auto Quest
 
-local Tab3 = Window:CreateTabe("Quest", "mail")
+local Tab3 = Window:CreateTab("Quest", "mail")
 
 local AutoQuestGojo = false
 local Toggle = Tab3:CreateToggle({
