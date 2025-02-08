@@ -1,0 +1,88 @@
+```lua
+
+local part = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+part.CFrame = CFrame.new(-3157.817626953125, 918.6312866210938, 15218.2802734375)-- Baggy tp
+wait(0.5)
+part.CFrame = CFrame.new(-3509.206787109375, 918.6312866210938, 15247.9716796875)-- Shanks tp
+wait(0.5)
+part.CFrame = CFrame.new(-3262.905517578125, 918.6312866210938, 14863.107421875)-- Luffy Tp
+wait(0.5)
+part.CFrame = CFrame.new(64.5281982421875, 5.550341606140137, -10024.6748046875) -- Toji TP
+wait(0.5)
+part.CFrame = CFrame.new(-16748.0078125, 7.000244140625, -5988.83740234375) --Gojo TP
+wait(0.5)
+part.CFrame = CFrame.new(-24421.9921875, 1577.437255859375, 480.9983215332031)--Whitebeard Tp
+wait(0.5)
+part.CFrame = CFrame.new(-43.25843811035156, 4.60019588470459, -9743.78515625)-- Sukuna TP
+wait(0.5)
+part.CFrame = CFrame.new(-150.6343536376953, 5.200181007385254, -10032.88671875) -- Yuji TP
+
+local function isBossAlive(bossModel)
+    if bossModel and bossModel:FindFirstChild("HumanoidRootPart") then
+        return true
+    else
+        return false
+    end
+end
+
+local boss1 = workspace.Living:FindFirstChild("The Clown") --Baggy boss Path
+local boss2 = workspace.Living:FindFirstChild("Shanks") --Shanks Boss Path
+local boss3 = workspace.Living:FindFirstChild("Luffy") --Luffy Boss Path
+local boss4 = workspace.Living:FindFirstChild("The Sorcerer Killer") -- Toji Boss Path
+local boss5 = workspace.Living:FindFirstChild("The Strongest Of Today")-- Gojo boss path
+local boss6 = workspace.Living:FindFirstChild("Whitebeard") --Whitebeard Boss Path
+local boss7 = workspace.Living:FindFirstChild("The Strongest In History") --Sukuna Boss Path
+local boss8 = workspace.Living:FindFirstChild("The Vessel") --Yuji boss Path
+
+
+
+if boss1 then
+    local alive = isBossAlive(boss1)
+    print("Baggy Alive?:", alive)
+    else print("Baggy dead as hell :skull:.")
+end
+
+if boss2 then
+    local alive = isBossAlive(boss2)
+    print("Shanks Alive?:", alive)
+    else print("Shanks dead as hell :skull:.")
+end
+
+if boss3 then
+    local alive = isBossAlive(boss3)
+    print("Luffy Alive?:", alive)
+    else print("Luffy dead as hell :skull:.")
+end
+
+if boss4 then
+    local alive = isBossAlive(boss4)
+    print("Toji Alive?:", alive)
+    else print("Toji dead as hell :skull:.")
+end
+
+if boss5 then
+    local alive = isBossAlive(boss5)
+    print("Gojo Alive?:", alive)
+    else print("Whitebeard dead as hell :skull:.")
+end
+
+if boss6 then
+    local alive = isBossAlive(boss6)
+    print("Whitebeard Alive?:", alive)
+    else print("Whitebeard dead as hell :skull:.")
+end
+
+if boss7 then
+    local alive = isBossAlive(boss7)
+    print("Sukuna Alive?:", alive)
+    else print("Sukuna dead as hell :skull:.")
+end
+
+if boss8 then
+    local alive = isBossAlive(boss8)
+    print("Yuji Alive?:", alive)
+    else print("Yuji dead as hell:skull:.")
+end
+local Paragraph = Tab1:CreateParagraph({Title = "List of boss", Content = "Paragraph Example"})
+```
