@@ -1,7 +1,6 @@
-```lua
-
 local part = game.Players.LocalPlayer.Character.HumanoidRootPart
 
+local savedPosition = part.CFrame
 part.CFrame = CFrame.new(-3157.817626953125, 918.6312866210938, 15218.2802734375)-- Baggy tp
 wait(0.5)
 part.CFrame = CFrame.new(-3509.206787109375, 918.6312866210938, 15247.9716796875)-- Shanks tp
@@ -17,6 +16,47 @@ wait(0.5)
 part.CFrame = CFrame.new(-43.25843811035156, 4.60019588470459, -9743.78515625)-- Sukuna TP
 wait(0.5)
 part.CFrame = CFrame.new(-150.6343536376953, 5.200181007385254, -10032.88671875) -- Yuji TP
+wait(0.5)
+part.CFrame = savedPosition
+
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Rayanne AUT",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "AUT Script",
+   LoadingSubtitle = "by Hb20bsk",
+   Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = "Hb20bsk_hub", -- Create a custom folder for your hub/game
+      FileName = "AUT"
+   },
+
+   Discord = {
+      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "nMMhBXNZxwc", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local Tab1 = Window:CreateTab("Auto Farm", "box")
 
 local function isBossAlive(bossModel)
     if bossModel and bossModel:FindFirstChild("HumanoidRootPart") then
@@ -25,7 +65,6 @@ local function isBossAlive(bossModel)
         return false
     end
 end
-
 local boss1 = workspace.Living:FindFirstChild("The Clown") --Baggy boss Path
 local boss2 = workspace.Living:FindFirstChild("Shanks") --Shanks Boss Path
 local boss3 = workspace.Living:FindFirstChild("Luffy") --Luffy Boss Path
@@ -35,54 +74,87 @@ local boss6 = workspace.Living:FindFirstChild("Whitebeard") --Whitebeard Boss Pa
 local boss7 = workspace.Living:FindFirstChild("The Strongest In History") --Sukuna Boss Path
 local boss8 = workspace.Living:FindFirstChild("The Vessel") --Yuji boss Path
 
+local alive1 = isBossAlive(boss1)
+local alive2 = isBossAlive(boss2)
+local alive3 = isBossAlive(boss3)
+local alive4 = isBossAlive(boss4)
+local alive5 = isBossAlive(boss5)
+local alive6 = isBossAlive(boss6)
+local alive7 = isBossAlive(boss7)
+local alive8 = isBossAlive(boss8)
 
 
-if boss1 then
-    local alive = isBossAlive(boss1)
-    print("Baggy Alive?:", alive)
-    else print("Baggy dead as hell :skull:.")
+
+
+
+
+local BaggyLabel = Tab1:CreateLabel("Baggy alive ?: " .. tostring(alive1), false) --use tostring for false and true in other cases where its a value use : .. variable
+local ShanksLabel = Tab1:CreateLabel("Shanks alive ?: " .. tostring(alive2), false)
+local LuffyLabel = Tab1:CreateLabel("Luffy alive ?: " .. tostring(alive3), false)
+local TojiLabel = Tab1:CreateLabel("Toji alive ?: " .. tostring(alive4), false)
+local GojoLabel = Tab1:CreateLabel("Gojo alive ?: " .. tostring(alive5), false)
+local WhitebeardLabel = Tab1:CreateLabel("WhiteBeard alive ?: " .. tostring(alive6), false)
+local SukunaLabel = Tab1:CreateLabel("Sukuna alive ?: " .. tostring(alive7), false)
+local YujiLabel = Tab1:CreateLabel("Yuji alive ?: " .. tostring(alive8), false)
+
+local Button = Tab1:CreateButton({
+   Name = "Button Example",
+   Callback = function()
+local savedPosition = part.CFrame
+part.CFrame = CFrame.new(-3157.817626953125, 918.6312866210938, 15218.2802734375)-- Baggy tp
+wait(0.5)
+part.CFrame = CFrame.new(-3509.206787109375, 918.6312866210938, 15247.9716796875)-- Shanks tp
+wait(0.5)
+part.CFrame = CFrame.new(-3262.905517578125, 918.6312866210938, 14863.107421875)-- Luffy Tp
+wait(0.5)
+part.CFrame = CFrame.new(64.5281982421875, 5.550341606140137, -10024.6748046875) -- Toji TP
+wait(0.5)
+part.CFrame = CFrame.new(-16748.0078125, 7.000244140625, -5988.83740234375) --Gojo TP
+wait(0.5)
+part.CFrame = CFrame.new(-24421.9921875, 1577.437255859375, 480.9983215332031)--Whitebeard Tp
+wait(0.5)
+part.CFrame = CFrame.new(-43.25843811035156, 4.60019588470459, -9743.78515625)-- Sukuna TP
+wait(0.5)
+part.CFrame = CFrame.new(-150.6343536376953, 5.200181007385254, -10032.88671875) -- Yuji TP
+wait(0.5)
+part.CFrame = savedPosition
+
+
+local function isBossAlive(bossModel)
+    if bossModel and bossModel:FindFirstChild("HumanoidRootPart") then
+        return true
+    else
+        return false
+    end
 end
+local boss1 = workspace.Living:FindFirstChild("The Clown") --Baggy boss Path
+local boss2 = workspace.Living:FindFirstChild("Shanks") --Shanks Boss Path
+local boss3 = workspace.Living:FindFirstChild("Luffy") --Luffy Boss Path
+local boss4 = workspace.Living:FindFirstChild("The Sorcerer Killer") -- Toji Boss Path
+local boss5 = workspace.Living:FindFirstChild("The Strongest Of Today")-- Gojo boss path
+local boss6 = workspace.Living:FindFirstChild("Whitebeard") --Whitebeard Boss Path
+local boss7 = workspace.Living:FindFirstChild("The Strongest In History") --Sukuna Boss Path
+local boss8 = workspace.Living:FindFirstChild("The Vessel") --Yuji boss Path
 
-if boss2 then
-    local alive = isBossAlive(boss2)
-    print("Shanks Alive?:", alive)
-    else print("Shanks dead as hell :skull:.")
-end
+local alive1 = isBossAlive(boss1)
+local alive2 = isBossAlive(boss2)
+local alive3 = isBossAlive(boss3)
+local alive4 = isBossAlive(boss4)
+local alive5 = isBossAlive(boss5)
+local alive6 = isBossAlive(boss6)
+local alive7 = isBossAlive(boss7)
+local alive8 = isBossAlive(boss8)
 
-if boss3 then
-    local alive = isBossAlive(boss3)
-    print("Luffy Alive?:", alive)
-    else print("Luffy dead as hell :skull:.")
-end
 
-if boss4 then
-    local alive = isBossAlive(boss4)
-    print("Toji Alive?:", alive)
-    else print("Toji dead as hell :skull:.")
-end
+BaggyLabel:Set("Baggy is alive ? : " .. tostring(alive1), false)
+ShanksLabel:Set("Shanks is alive ? : " .. tostring(alive2), false)
+LuffyLabel:Set("Luffy is alive ? : " .. tostring(alive3), false)
+TojiLabel:Set("Toji is alive ? : " .. tostring(alive4), false)
+GojoLabel:Set("Gojo is alive ? : " .. tostring(alive5), false)
+WhitebeardLabel:Set("Whitebeard is alive ? : " .. tostring(alive6), false)
+SukunaLabel:Set("Sukuna is alive ? : " .. tostring(alive7), false)
+YujiLabel:Set("Yuji is alive ? : " .. tostring(alive8), false)
 
-if boss5 then
-    local alive = isBossAlive(boss5)
-    print("Gojo Alive?:", alive)
-    else print("Whitebeard dead as hell :skull:.")
-end
-
-if boss6 then
-    local alive = isBossAlive(boss6)
-    print("Whitebeard Alive?:", alive)
-    else print("Whitebeard dead as hell :skull:.")
-end
-
-if boss7 then
-    local alive = isBossAlive(boss7)
-    print("Sukuna Alive?:", alive)
-    else print("Sukuna dead as hell :skull:.")
-end
-
-if boss8 then
-    local alive = isBossAlive(boss8)
-    print("Yuji Alive?:", alive)
-    else print("Yuji dead as hell:skull:.")
-end
-local Paragraph = Tab1:CreateParagraph({Title = "List of boss", Content = "Paragraph Example"})
-```
+   -- The function that takes place when the button is pressed
+   end,
+})
