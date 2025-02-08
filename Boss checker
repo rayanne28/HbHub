@@ -98,7 +98,7 @@ local SukunaLabel = Tab1:CreateLabel("Sukuna alive ?: " .. tostring(alive7), fal
 local YujiLabel = Tab1:CreateLabel("Yuji alive ?: " .. tostring(alive8), false)
 
 local Button = Tab1:CreateButton({
-   Name = "Button Example",
+   Name = "Refresh boss",
    Callback = function()
 local savedPosition = part.CFrame
 part.CFrame = CFrame.new(-3157.817626953125, 918.6312866210938, 15218.2802734375)-- Baggy tp
